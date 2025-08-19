@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="hi"
+                 name="Reliability Engineering"
+                 start-page="Glossary.md">
+
+    <toc-element topic="Glossary.md"/>
+    <toc-element topic="CPU-Power-Wall.md"/>
+    <toc-element topic="Compute-Spectrum.md"/>
+    <toc-element topic="Reliability-Spectrum.md"/>
+    <toc-element topic="Fault-Tolerance-Spectrum.md"/>
+    <toc-element topic="FT-Sync-vs-Async.md"/>
+    <toc-element topic="Observability-Paradox.md"/>
+</instance-profile>
