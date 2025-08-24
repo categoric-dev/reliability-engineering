@@ -87,7 +87,7 @@ If you’re looking at a CPU from the early‑2000s, remember:
 
 ## The Rise of Async
 
-### 1. Why Multicore CPUs Matter for Software
+### 1. Why Multicore CPUs Matter for Software {collapsible="true"}
 
 | Fact                                                                                        | Implication                                                     |
 |---------------------------------------------------------------------------------------------|-----------------------------------------------------------------|
@@ -155,7 +155,7 @@ In short, **multicore CPUs set the stage**: you need more parallel work to get p
 
 ## Scaling with Async
 
-### 1. What is “Horizontal Scalability”?
+### 1. What is “Horizontal Scalability”? {collapsible="true"}
 
 | Definition                                                                             | Typical Goal                                                             |
 |----------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
@@ -164,7 +164,7 @@ In short, **multicore CPUs set the stage**: you need more parallel work to get p
 Horizontal scaling is the core of modern cloud‑native architectures (Kubernetes, Docker Swarm, etc.).  
 The question: **How does async programming make horizontal scaling easier?**
 
-### 2. The Relationship Between Async and Scale
+### 2. The Relationship Between Async and Scale {collapsible="true"}
 
 | Aspect                          | Async Benefit                                                                                                                                                                                                |
 |---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -223,7 +223,7 @@ The question: **How does async programming make horizontal scaling easier?**
 
 ## Async Fault Tolerance
 
-### 1. The Core Trade‑off
+### 1. The Core Trade‑off {collapsible="true"}
 
 | Aspect              | Synchronous                                                                                 | Asynchronous                                                                                                             |
 |---------------------|---------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|

@@ -10,6 +10,7 @@
         <toc-element topic="Dichotomies.md"/>
     </toc-element>
     <toc-element topic="Scaling-miracles.md">
+        <toc-element topic="Scaling-dichotomies.md"/>
         <toc-element topic="CPU-Power-Wall.md"/>
     </toc-element>
     <toc-element topic="Compute-Spectrum.md"/>

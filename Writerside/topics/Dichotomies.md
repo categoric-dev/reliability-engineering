@@ -40,4 +40,3 @@ Acceptance
 
 Mitigation
 : The systematic implementation of control measures—engineering, procedural, administrative or safety‑instrumentation changes—intended to reduce the residual risk below the established acceptable threshold. Mitigation actions are selected, designed, and validated to improve safety performance before acceptance is considered.
-

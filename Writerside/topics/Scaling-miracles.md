@@ -1,7 +1,7 @@
 # Scaling miracles
 
-The trio of “scaling miracles” that drove the silicon age is no longer a silver bullet. Each one has hit a wall, and
-together they’re forcing the industry to rethink what “more performance” actually means.
+The trio of “scaling miracles” that drove the silicon age is no longer a panacea. Each one has hit a wall, and
+together they’re forcing the industry to rethink what “higher performance” actually means.
 
 ## Scaling Laws {collapsible="true"}
 
@@ -74,7 +74,11 @@ Below is a quick snapshot of why each law is struggling and what the community i
 ## Bottom line
 
 1. **Dennard Scaling**, as a **thermal limit, drove the shift to multicore** – that’s why you see “4‑core” or “8‑core” CPUs even at modest clock speeds.
-1. **Amdahl’s Law** reminds us that **parallelism is powerful but not unlimited**. The serial fraction of a workload sets an upper bound on achievable speed‑up, no matter how many cores we throw at it. In practice, this drives:
+1. **Amdahl’s Law** reminds us that **parallelism is powerful but not unlimited**. The serial fraction of a workload sets an upper bound on achievable speed‑up, no matter how many cores we throw at it. 
 1. **Moore’s Law**, as an **exponential transistor‑count metric, has reached a practical plateau** due to physics, economics, and power limits. 
 
-The semiconductor industry is not ending but pivoting: scaling now means integrating diverse technologies, optimizing energy efficiency, and tailoring hardware to workloads. The next wave of performance gains will come from architecture, materials, and integration rather than sheer transistor density.
+**The semiconductor industry is not ending but pivoting:** scaling now means integrating diverse technologies, optimizing energy efficiency, and tailoring hardware to workloads. The next wave of performance gains will come from architecture, materials, and integration rather than sheer transistor density.
+
+The power wall forced the industry to embrace multicore designs and invest heavily in process technology. If a program is single‑threaded, adding more cores does nothing: the OS will still run that one thread on one core. To fully exploit a multicore system, the application must run multiple independent tasks simultaneously. In short, multicore CPUs set the stage: you need more parallel work to get performance gains. Async programming provides the choreography that turns I/O waits into productive CPU cycles, letting software scale cleanly across all those cores.
+
+Asynchronous programming turns I/O waits into CPU‑free time. That efficiency lets a single node handle far more traffic, which in turn reduces the number of nodes you need to provision. The smaller footprint and clear observability make horizontal scaling smoother, more predictable, and cost‑effective in any cloud or container environment.

@@ -1,16 +1,14 @@
 # Compute Spectrum
 
-* Distributed systems come in many shapes—**HPC clusters, grids, clouds, P2P networks, microservices, distributed databases**, etc.—each with its own trade‑offs around coupling, ownership, heterogeneity, fault tolerance, and cost. **Cloud computing is a distributed system** that provides an abstraction layer over a globally distributed infrastructure. When you design an application today, you’re almost always building a *distributed system* on top of one (or more) of these foundational forms.
+## 1.  What is a “distributed system”?
 
-## 1.  What is a “distributed system”? {collapsible="true"}
+> **A distributed system** is a collection of independent computers that cooperate to provide a single logical service or application. The individual nodes are connected by a network, share some common interface (APIs, protocols, data), and appear to the user as one coherent system.
 
-> **A distributed system** is a collection of independent computers that cooperate to provide a single logical service or application.  
-> The individual nodes are connected by a network, share some common interface (APIs, protocols, data), and appear to the user as one coherent system.
 
-Because the components are **distributed**—in space, ownership or both—they bring challenges such as latency, partial failures, consistency, and scaling.  
-**Cloud computing is a distributed system**, but it also describes a *service model* (IaaS, PaaS, SaaS) that runs on top of a distributed infrastructure.
+Distributed systems come in many shapes **HPC clusters, grids, clouds, P2P networks, microservices, distributed databases**, etc.—each with its own trade‑offs around coupling, ownership, heterogeneity, fault tolerance, and cost. **Cloud computing is a distributed system** that provides an abstraction layer over a globally distributed infrastructure. When you design an application today, you’re almost always building a *distributed system* on top of one (or more) of these foundational forms.
 
----
+Because the components are **distributed**—in space, ownership, or both—they bring challenges such as latency, partial failures, consistency, and scaling. **Cloud computing is a distributed system**, but it also describes a *service model* (IaaS, PaaS, SaaS) that runs on top of a distributed infrastructure.
+
 
 ## 2.  Major “forms” (categories) of distributed systems {collapsible="true"}
 
@@ -30,9 +28,7 @@ Because the components are **distributed**—in space, ownership or both—they 
 
 > **Note:** Many of these categories overlap. For example, a cloud provider can host an HPC cluster, or a microservices stack can run on a distributed database. The table is meant to illustrate the *primary architectural intent*.
 
----
-
-## 3. Quick reference table (key traits)
+## 3. Quick reference table (key traits) {collapsible="true"}
 
 | Trait               | HPC Cluster             | Grid                        | Cloud                    | P2P                             | Microservices             |
 |---------------------|-------------------------|-----------------------------|--------------------------|---------------------------------|---------------------------|

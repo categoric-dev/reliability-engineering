@@ -9,13 +9,13 @@
 | **Resilience**             | The system can *adapt to a wide range of adverse conditions* (failures, load spikes, network partitions) and still deliver acceptable service. | Self‑healing, graceful degradation, dynamic re‑configuration. |
 | **Disaster Recovery (DR)** | The ability to *restore service after a catastrophic event* (data center outage, natural disaster, ransomware).                                | Backup/replication, RTO/RPO planning, recovery procedures.    |
 
-> **Key difference** –  
-> •Fault tolerance is a *mechanism* that keeps the system running when something goes wrong.  
-> •HA is a *metric* (uptime) that tells how often the system is available.  
-> •Resilience is a *property* of the whole system: it can tolerate, recover from, and adapt to problems.  
-> •DR is a *process* that takes the system from “down” to “up again” after an external disaster.
 
----
+| Term                  | What you *build*                               | What you *measure*                      | Where it is most critical                          |
+|-----------------------|------------------------------------------------|-----------------------------------------|----------------------------------------------------|
+| **Fault tolerance**   | Redundant components, automatic fail‑over code | “Zero downtime” for a specific failure  | HPC simulation jobs, cloud microservices           |
+| **High availability** | Standby servers, load balancers, health checks | Uptime percentage (e.g., 99.999%)       | Web‑apps, SaaS platforms                           |
+| **Resilience**        | Self‑healing architecture, adaptive scheduling | Recovery time after *any* adverse event | Distributed microservices, edge computing          |
+| **Disaster recovery** | Backups, cross‑region replication, DR plans    | RTO/RPO goals                           | Enterprise data stores, critical business services |
 
 ## 2.  How the four concepts show up in the three “forms” of distributed computing {collapsible="true"}
 
@@ -41,18 +41,9 @@
 
 ## 5.  Bottom line
 
-| Term                  | What you *build*                               | What you *measure*                      | Where it is most critical                          |
-|-----------------------|------------------------------------------------|-----------------------------------------|----------------------------------------------------|
-| **Fault tolerance**   | Redundant components, automatic fail‑over code | “Zero downtime” for a specific failure  | HPC simulation jobs, cloud microservices           |
-| **High availability** | Standby servers, load balancers, health checks | Uptime percentage (e.g., 99.999%)       | Web‑apps, SaaS platforms                           |
-| **Resilience**        | Self‑healing architecture, adaptive scheduling | Recovery time after *any* adverse event | Distributed microservices, edge computing          |
-| **Disaster recovery** | Backups, cross‑region replication, DR plans    | RTO/RPO goals                           | Enterprise data stores, critical business services |
+> **Fault tolerance** is a *mechanism*,  
+> **High availability** is a *metric*,  
+> **Resilience** is a *property* of the whole system, and  
+> **Disaster recovery** is a *process* that kicks in only after a catastrophic event.
 
-> **Remember:**  
-> *Fault tolerance* is a *mechanism*,  
-> *High availability* is a *metric*,  
-> *Resilience* is a *property* of the whole system, and  
-> *Disaster recovery* is a *process* that kicks in only after a catastrophic event.
-
-In any distributed system—whether it’s an HPC cluster, a grid federation, or a multi‑tenant cloud—you’ll need to decide which of these concepts (or all of them) are required by the workload, and then choose the right mix of hardware, software, and operational practices to deliver it.
-
+In any distributed system you’ll need to decide which of these concepts (or all of them) are required by the workload and then choose the right mix of hardware, software, and operational practices to deliver it.

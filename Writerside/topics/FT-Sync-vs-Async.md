@@ -14,9 +14,7 @@ Below I unpack why that happened, what it looks like in practice, and how the ro
 | **Scale**            | Hundreds to low‑thousands of nodes, usually in a single data centre.                                                                  | Tens of thousands to millions of containers spread across many regions and clouds.                                               |
 | **Change cadence**   | Low – big releases are infrequent, scheduled during maintenance windows.                                                              | High – continuous delivery / Git‑Ops, hot‑fixes in minutes, blue‑green or canary releases.                                       |
 
-Because the cloud/micro‑service stack is *distributed* and *dynamic*, failures are no longer isolated to a single node but can cascade across dozens of services.  That makes “fault‑tolerance” an *asynchronous* property: you cannot pause the whole system and wait for a node to come back up.  Instead, you design the system so that *any* failure can be detected and mitigated without stopping other parts of the application.
-
----
+Because the cloud/micro‑service stack is *distributed* and *dynamic*, failures are no longer isolated to a single node but can cascade across dozens of services. That makes “fault‑tolerance” an *asynchronous* property: you cannot pause the whole system and wait for a node to come back up.  Instead, you design the system so that *any* failure can be detected and mitigated without stopping other parts of the application.
 
 ## 2.  Why that creates a new skill set  {collapsible="true"}
 
@@ -75,12 +73,11 @@ In the HPC/Grid world, reliability was *implicitly* achieved by the architecture
 | **Collaboration** | Ops ↔ devs, mostly on a per‑job basis.  | SRE ↔ devs, with shared responsibility for reliability (e.g., “SLO‑first” design).       |
 | **Tooling**       | Custom scripts, batch job schedulers.   | Standard observability stacks (Prometheus/Grafana, OpenTelemetry), CI/CD pipelines, IaC. |
 
-The result is that *reliability engineering* becomes a **core product function** in the cloud, rather than an after‑thought that only kicks in when something breaks.  That is why we see dedicated SRE teams, SLO‑first development practices, and a whole ecosystem of tools built around observability and automated recovery.
+The result is that *reliability engineering* becomes a **core product function** in the cloud, rather than an after‑thought that only kicks in when something breaks. That is why we see dedicated SRE teams, SLO‑first development practices, and a whole ecosystem of tools built around observability and automated recovery.
 
 ## 6.  Bottom line
 
 - **HPC/Grid ops** rely on *synchronous* fault‑tolerance: checkpoint/rollback, manual job resubmission, and a relatively small set of failure scenarios.  Reliability is baked into the architecture but not explicitly engineered.
-
 - **Cloud/micro‑service ops** rely on *asynchronous* fault‑tolerance: self‑healing, auto‑scaling, distributed state.  Reliability becomes a *software engineering problem* that must be measured, automated, and continuously improved.
 
-Because the latter environment is more dynamic, distributed, and failure‑prone, it demanded a new discipline—SRE—to manage reliability systematically.  That is why we see an explicit emphasis on “Reliability Engineering” in the cloud world and not (or less so) in traditional HPC/Grid environments.
+Because the latter environment is more dynamic, distributed, and failure‑prone, it demanded a new discipline—SRE—to manage reliability systematically. That is why we see an explicit emphasis on “Reliability Engineering” in the cloud world and not (or less so) in traditional HPC/Grid environments.
