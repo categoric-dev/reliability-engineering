@@ -39,7 +39,7 @@
 | **Resilience**        | *Adaptive scheduling*: the scheduler can move jobs to spare nodes when a node fails or is taken offline for maintenance. | *Federation shift*: workloads can be shifted to a different federation if one is overloaded or offline.                               | *Microservice self‑healing*: circuit breakers and retries let services recover from transient failures without human intervention.        |
 | **Disaster recovery** | *Off‑site checkpoint backup*: in case the entire facility is lost, jobs can be resumed on a secondary site.              | *Cross‑continent data replication*: the grid keeps copies of data in multiple federations so a regional disaster doesn’t wipe it out. | *Cross‑region replication* and *automatic backups*: a data loss in one region can be recovered from another region’s copy within the RTO. |
 
-## 5.  Bottom line {collapsible="true"}
+## 5.  Bottom line
 
 | Term                  | What you *build*                               | What you *measure*                      | Where it is most critical                          |
 |-----------------------|------------------------------------------------|-----------------------------------------|----------------------------------------------------|

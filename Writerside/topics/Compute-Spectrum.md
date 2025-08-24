@@ -32,7 +32,7 @@ Because the components are **distributed**—in space, ownership or both—they 
 
 ---
 
-## 3. Quick reference table (key traits) {collapsible="true"}
+## 3. Quick reference table (key traits)
 
 | Trait               | HPC Cluster             | Grid                        | Cloud                    | P2P                             | Microservices             |
 |---------------------|-------------------------|-----------------------------|--------------------------|---------------------------------|---------------------------|
