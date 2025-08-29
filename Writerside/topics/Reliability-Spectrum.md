@@ -1,9 +1,55 @@
 # Reliability Spectrum
 
+## Concepts and Properties
+
+| Concept               | Scope of Failure            | Goal                                            |
+|-----------------------|-----------------------------|-------------------------------------------------|
+| **Fault Isolation**   | Localized component         | Containment                                     |
+| **Fault Tolerance**   | Localized component         | Prevention of disruption                        |
+| **High Availability** | Broad (including component) | Minimizing downtime, high uptime                |
+| **Resilience**        | Broad (including component) | Quick recovery from failures                    |
+| **Disaster Recovery** | Large-scale (site outage)   | Restoration of service after catastrophic event |
+
+
+| Concept               | Synchronous?     | Automation/Coupling | Human In The Loop  | Restorative |
+|-----------------------|------------------|---------------------|--------------------|-------------|
+| **Fault Isolation**   | ✅ (strong)       | ✅ (high)            | ❌ (low-medium)     | ❌           |
+| **Fault Tolerance**   | ✅ (strong)       | ✅ (high)            | ❌ (low-medium)     | ✅           |
+| **High Availability** | ❌ (mostly async) | ✅ (medium-high)     | ❌ (low-medium)     | ✅           |
+| **Resilience**        | ⚪ (mix)          | ✅ (medium-high)     | ⚪ (policy tuning)  | ✅           |
+| **Disaster Recovery** | ❌ (async)        | ⚪ (low)             | ✅ (human approval) | ✅           |
+
+## When to Pick Which Strategy
+
+| Business Goal                                                    | Recommended Concept(s) |
+|------------------------------------------------------------------|------------------------|
+| Reduce the blast radius of failures and prevent cascading issues | **Fault Isolation**    |
+| Zero‑downtime, data correctness on every request                 | **Fault Tolerance**    |
+| Continuity under load spikes + ability to recover from failures  | **Resilience**         |
+| Recover after a catastrophic site failure, minimal data loss     | **Disaster Recovery**  |
+| Keep a service online with minimal latency, tolerate node churn  | **High Availability**  |
+
+## Relationship Between System Concepts
+
+| Concept                    | Description                                                                                                                                        |
+|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Fault Tolerance**        | A technique used to achieve high availability by preventing failures from causing system downtime.                                                 |
+| **Resilience**             | A broader concept than fault tolerance, encompassing strategies for dealing with *all* failures, including those not prevented by fault tolerance. |
+| **Disaster Recovery (DR)** | A subset of business continuity planning, focused on restoring systems after a major disruptive event.                                             |
+
+| Concept                    | Definition / Core Idea                                                                                        | Relationship / Additional Notes                                                                                                           |
+|----------------------------|---------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| **Fault Isolation**        | Separating system components so that a failure in one part does not spread to others.                         | Essential for effective fault tolerance; limits the scope of a failure, enabling it to be tolerated.                                      |
+| **Fault Tolerance**        | Techniques that allow a system to continue operating in the presence of faults (e.g., redundancy, fail‑over). | A tool for achieving high availability; contributes to resilience but does not cover all failure scenarios.                               |
+| **Resilience**             | The overall ability of a system to anticipate, absorb, recover from, and adapt to failures.                   | Broader than fault tolerance; includes strategies for failures that fault tolerance cannot prevent or handle.                             |
+| **High Availability (HA)** | The design goal of keeping a system operational most of the time.                                             | Uses fault‑tolerant components plus monitoring, alerting, and rapid recovery procedures.                                                  |
+| **Disaster Recovery (DR)** | A subset of business continuity planning focused on restoring data and services after a major event.          | Requires broader strategies (data backup, site fail‑over) beyond fault tolerance; fault tolerance can aid DR but is not sufficient alone. |
+
 ## 1.  What the words actually mean {collapsible="true"}
 
 | Term                       | Core idea                                                                                                                                      | Typical focus                                                 |
 |----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| **Fault Isolation**        | The system *fails safely* rather than failing catastrophically.                                                                                | Rapid detection, scope limitation, rollback mechanisms.       |
 | **Fault Tolerance**        | The system *continues to operate correctly* when one or more components fail.                                                                  | Zero‑downtime, built‑in redundancy (spares, hot‑standby).     |
 | **High Availability (HA)** | The system is designed so that *downtime is very small* (usually measured in milliseconds to minutes).                                         | Redundancy, rapid fail‑over, load balancing.                  |
 | **Resilience**             | The system can *adapt to a wide range of adverse conditions* (failures, load spikes, network partitions) and still deliver acceptable service. | Self‑healing, graceful degradation, dynamic re‑configuration. |
@@ -39,11 +85,11 @@
 | **Resilience**        | *Adaptive scheduling*: the scheduler can move jobs to spare nodes when a node fails or is taken offline for maintenance. | *Federation shift*: workloads can be shifted to a different federation if one is overloaded or offline.                               | *Microservice self‑healing*: circuit breakers and retries let services recover from transient failures without human intervention.        |
 | **Disaster recovery** | *Off‑site checkpoint backup*: in case the entire facility is lost, jobs can be resumed on a secondary site.              | *Cross‑continent data replication*: the grid keeps copies of data in multiple federations so a regional disaster doesn’t wipe it out. | *Cross‑region replication* and *automatic backups*: a data loss in one region can be recovered from another region’s copy within the RTO. |
 
-## 5.  Bottom line
+## 4.  Bottom line
 
-> **Fault tolerance** is a *mechanism*,  
-> **High availability** is a *metric*,  
-> **Resilience** is a *property* of the whole system, and  
+> **Fault isolation** and **fault tolerance** are *techniques*,   
+> **Resilience** is a *property* of the whole system,   
+> **High availability** is a *quantitative measure*, and   
 > **Disaster recovery** is a *process* that kicks in only after a catastrophic event.
 
 In any distributed system you’ll need to decide which of these concepts (or all of them) are required by the workload and then choose the right mix of hardware, software, and operational practices to deliver it.

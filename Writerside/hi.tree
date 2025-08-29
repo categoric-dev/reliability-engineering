@@ -12,10 +12,11 @@
     <toc-element topic="Scaling-miracles.md">
         <toc-element topic="Scaling-dichotomies.md"/>
         <toc-element topic="CPU-Power-Wall.md"/>
+        <toc-element topic="Compute-Spectrum.md"/>
     </toc-element>
-    <toc-element topic="Compute-Spectrum.md"/>
     <toc-element topic="Reliability-Spectrum.md"/>
     <toc-element topic="Fault-Tolerance-Spectrum.md"/>
     <toc-element topic="FT-Sync-vs-Async.md"/>
+    <toc-element topic="Data-Scaling.md"/>
     <toc-element topic="Observability-Paradox.md"/>
 </instance-profile>
