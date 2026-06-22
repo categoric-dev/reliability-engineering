@@ -16,7 +16,16 @@
     </toc-element>
     <toc-element topic="Reliability-Spectrum.md"/>
     <toc-element topic="Fault-Tolerance-Spectrum.md"/>
-    <toc-element topic="FT-Sync-vs-Async.md"/>
     <toc-element topic="Data-Scaling.md"/>
     <toc-element topic="Observability-Paradox.md"/>
+    <toc-element topic="FT-Sync-vs-Async.md"/>
+    <toc-element topic="Progress-and-Responsibility.md"/>
+    <toc-element topic="SRE.md"/>
+    <toc-element topic="Agile-Story-5-0.md"/>
+    <toc-element topic="scaling-stalemate.md"/>
+    <toc-element topic="chronology.md"/>
+    <toc-element topic="Software-Design.md"/>
+    <toc-element topic="Consensus-and-Coherence.md"/>
+    <toc-element topic="OKR.md"/>
+    <toc-element topic="AWS.md"/>
 </instance-profile>

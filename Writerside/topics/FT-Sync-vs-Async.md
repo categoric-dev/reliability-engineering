@@ -1,6 +1,6 @@
 # FT: Sync vs. Async
 
-Yes – the move from *synchronous* fault‑tolerance (think checkpoint‑restart on a fixed set of compute nodes) to *asynchronous* fault‑tolerance, resilience, disaster recovery and high‑availability in the cloud and micro‑service world forced a new way of thinking about operations.  In that environment “reliability” became an *engineering discipline* rather than a side‑effect of manual job scheduling, and that is what gave birth to the SRE (Site Reliability Engineering) model.
+Yes – the move from *synchronous* fault‑tolerance (think checkpoint‑restart on a fixed set of compute nodes) to *asynchronous* fault‑tolerance, resilience, disaster recovery, and high‑availability in the cloud and micro‑service world forced a new way of thinking about operations.  In that environment “reliability” became an *engineering discipline* rather than a side‑effect of manual job scheduling, and that is what gave birth to the SRE (Site Reliability Engineering) model.
 
 Below I unpack why that happened, what it looks like in practice, and how the roles and responsibilities differ between the two worlds.
 

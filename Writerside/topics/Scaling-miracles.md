@@ -1,88 +1,45 @@
-# Scaling miracles
+# Scaling Crossroads
 
-## Hardware Scaling
+The "scaling crossroads" metaphor encapsulates computing’s critical transition: traditional performance gains—driven by Moore’s Law (transistor count), Dennard Scaling (power efficiency), and unconstrained hardware expansion—have collapsed, making dark silicon (idle transistors wasted due to power limits) the new frontier. Survival now requires shifting from "more hardware" to "smarter software" that activates dark silicon.
 
-The trio of “scaling miracles” that drove the silicon age is no longer a panacea. Each one has hit a wall, and
-together they’re forcing the industry to rethink what “higher performance” actually means.
+## The Collapse of Traditional Hardware Scaling
 
-### Scaling Laws {collapsible="true"}
+1. **Moore’s Law (1964–2027):** Predicted doubling transistor count every two years, but physical constraints (quantum tunneling, manufacturing costs) have reduced growth to 1–2% annually, stalling raw hardware performance.
+1. **Dennard Scaling (1974–2002):** Collapsed in the 2000s as smaller transistors consumed more power—doubling count doubled power consumption, not performance. Originally designed to maintain constant power density as transistors shrank, efficiency reversed below the 65nm node: newer transistors now consume more power than smaller predecessors, exacerbating heat generation and energy costs in data centers and end devices.
+1. **Cost scaling stagnation (2010–present):** Analyses confirm per-transistor costs ceased declining around the 28nm manufacturing node (early 2010s). Since then, economic benefits of scaling have been outweighed by skyrocketing advanced manufacturing expenses.
 
-<table>
-    <tr>
-        <td>Scaling Law</td>
-        <td>What it promised</td>
-        <td>Why it matters now</td>
-    </tr>
-    <tr>
-        <td>Dennard Scaling</td>
-        <td>Power density stays constant as transistors shrink → <control>higher frequency, lower voltage per gate</control>.</td>
-        <td>Higher clock rates cost more cooling, more die area for thermal management, and they <control>hit the “power wall”</control></td>
-    </tr>
-    <tr>
-        <td>Amdahl’s Law</td>
-        <td><control>Speedup</control> = 1 / (s + (1‑s)/p). Parallelism helps only until the serial portion dominates.</td>
-        <td>The “serial fraction” shrinks slower than hardware scales, so <control>adding more cores gives diminishing returns</control>.</td>
-    </tr>
-    <tr>
-        <td>Moore’s Law</td>
-        <td><control>~2× transistor count per 18‑24mo</control>.</td>
-        <td>You can’t keep adding transistors at the same cost and time, so <control>“more logic for less money” stalls</control>.</td>
-    </tr>
-</table>
+### Shift to multicore processors
 
-Dennard scaling, Amdahl’s Law, and Moore’s Law are not dead—they’re just *muted*. The next wave of performance will come
-from smarter integration, domain‑specific hardware, and software that can flexibly adapt to heterogeneous resources. The
-real challenge is orchestrating all of this without ballooning costs or compromising reliability.
+In response to the "power wall," manufacturers adopted multicore processors, enabling parallel task execution at lower clock speeds instead of relying on single, ultra-fast cores. Power constraints still prevent simultaneous peak performance across all cores, however, leaving portions of the chip inactive.
 
-Below is a quick snapshot of why each law is struggling and what the community is doing (or could do) to keep moving forward.
+The result: **Dark Silicon (2002–present):** As transistor density rises while per-transistor power efficiency stagnates, a fully active chip would overheat and fail. To stay within safe power budgets, designers deactivate large chip sections at any time—meaning only a fraction of billions of transistors can operate concurrently to execute tasks.
 
-<tabs>
-    <tab title="Dennard Scaling">
-            <p><control>Where the wall shows up:</control> Leakage & variability explode below ~20nm; sub‑threshold currents dominate, so you can’t simply lower VDD and keep the same dynamic power.</p>
-            <p><control>How the Industry Responded:</control></p>
-            <list type="decimal">
-                <li><p>Multi‑core (and many‑core) designs: Split workload across cores; each core runs at a lower frequency, keeping per‑core power low.</p></li>
-                <li><p>Dynamic voltage/frequency scaling (DVFS): CPUs would automatically lower 𝑉 and 𝑓 when idle or under light load.</p></li>
-                <li><p>Advanced process nodes	90nm → 65nm → 45nm → 32nm reduced capacitance 𝐶, allowing higher 𝑓 at lower power.</p></li>
-                <li><p>Architectural changes: More efficient pipelines, out‑of‑order execution, larger caches to reduce memory traffic (which is power‑heavy).</p></li>
-                <li><p>Thermal design improvements: Heat‑spreading dielets, improved airflow, and eventually the move to liquid cooling in high‑end markets.</p></li>
-            </list>
-    </tab>
-    <tab title="Amdahl’s Law">
-        <p><control>Where the wall shows up:</control> Serial bottlenecks: I/O, memory hierarchy, control logic, and algorithmic dependencies.</p>
-        <p><control>How the Industry Responded:</control></p>
-        <list type="decimal">
-            <li><p>Heterogeneous computing – mix high‑performance CPUs with specialized accelerators (GPUs, TPUs, FPGAs) that can handle the parallelizable portions more efficiently while leaving serial work to the CPU.</p></li>
-            <li><p>Task‑level and data‑level parallelism – rewrite software libraries to expose more parallel work, e.g., vectorized kernels, multi‑threaded runtimes, and domain‑specific languages.</p></li>
-            <li><p>Algorithmic redesign – develop algorithms with lower serial fractions (e.g., divide‑conquer, pipelining, locality, iterative refinement) or that are inherently parallel.</p></li>
-            <li><p>Dynamic scheduling & work‑stealing – runtime systems that balance load across cores and reduce idle time, mitigating the impact of a serial bottleneck.</p></li>
-            <li><p>Hardware support for synchronization – faster interconnects, atomic operations, and coherence protocols that reduce the overhead of coordinating many cores.</p></li>
-            <li><p>Approximate / probabilistic computing where perfect accuracy is unnecessary.</p></li>
-            <li><p>Hardware‑software co‑design to expose more parallelism at the architectural level.</p></li>
-        </list>
-    </tab>
-    <tab title="Moore’s Law">
-        <p><control>Where the wall shows up:</control> Physical limits (quantum tunneling, lithography resolution). Economic limits – fabs cost > $10B; yield penalties rise.</p>
-        <p><control>How the Industry Responded:</control></p>
-        <list type="decimal">
-            <li><p>Process‑node shrink still happening (3nm, 2nm), but at a slower rate.</p></li>
-            <li><p>Advanced packaging (3D‑IC, TSVs, chiplets) to pack more logic without shrinking the die.</p></li>
-            <li><p>Materials science: high‑k/metal gates, 2D materials, nanowire FETs.</p></li>
-            <li><p>Design‑automation: higher abstraction levels (HLS, high‑level synthesis).</p></li>
-        </list>
-    </tab>
-</tabs>
+## Why Software Scaling Was Delayed?
 
-### Bottom line
+Hardware abundance delayed software optimization, compounded by Amdahl’s Law, the von Neumann bottleneck, and—until recently—the low stakes of dark silicon:
 
-1. **Dennard Scaling**, as a **thermal limit, drove the shift to multicore** – that’s why you see “4‑core” or “8‑core” CPUs even at modest clock speeds.
-1. **Amdahl’s Law** reminds us that **parallelism is powerful but not unlimited**. The serial fraction of a workload sets an upper bound on achievable speed‑up, no matter how many cores we throw at it. 
-1. **Moore’s Law**, as an **exponential transistor‑count metric, has reached a practical plateau** due to physics, economics, and power limits. 
+1. **Von Neumann Bottleneck (since 1945)**: Even when software tried to parallelize, CPU-memory latency limited efficiency—activating more cores often led to worse performance due to memory contention, rather than reducing dark silicon.
+1. **Amdahl's Law (since 1967)**: A program's speedup from parallelization is limited by its sequential (serial) part. The serial fraction sets a hard limit on the overall speedup, regardless of how many processors are used.
+1. **Dennard Scaling’s Substitution (until 2002)**: Faster single cores made concurrent programming (with its thread overhead) unnecessary; developers focused on serial performance, leaving mainstream software unable to activate multiple cores.
+1. **Koomey’s Law (1946–2009):** Exponential growth in computations per unit energy meant hardware could deliver sustained performance gains through efficiency improvements, not parallelism—reducing the incentive for software to adopt concurrent programming.
+1. **Dark Silicon Irrelevance (until 2007)**: In the 2000s, dark silicon ratios were <10% (plenty of power for all cores), so ignoring parallelism had no cost. By 2020, however, dark silicon exceeds 50% in high-performance chips—wasting billions of dollars in transistor investment because software can’t utilize the idle cores.
 
-**The semiconductor industry is not ending but pivoting:** scaling now means integrating diverse technologies, optimizing energy efficiency, and tailoring hardware to workloads. The next wave of performance gains will come from architecture, materials, and integration rather than sheer transistor density.
+The result? Software scaling remained confined to HPC, while mainstream applications left vast swaths of hardware in dark silicon—until power constraints made this waste economically and technically unsustainable.
 
-The power wall forced the industry to embrace multicore designs and invest heavily in process technology. If a program is single‑threaded, adding more cores does nothing: the OS will still run that one thread on one core. To fully exploit a multicore system, the application must run multiple independent tasks simultaneously. In short, multicore CPUs set the stage: you need more parallel work to get performance gains. Async programming provides the choreography that turns I/O waits into productive CPU cycles, letting software scale cleanly across all those cores.
+## Economy of Scaling
 
-Asynchronous programming turns I/O waits into CPU‑free time. That efficiency lets a single node handle far more traffic, which in turn reduces the number of nodes you need to provision. The smaller footprint and clear observability make horizontal scaling smoother, more predictable, and cost‑effective in any cloud or container environment.
+> Death of Moore's Law Have Been Greatly Exaggerated -- Intel CEO, Brian Krzanich
 
-## Software scaling
+Moore’s Law—Gordon Moore’s 1965 prediction that the number of transistors on a microchip doubles every two years—has evolved from a semiconductor milestone into a global engine of exponential computing growth, now transcending chips to serve as an economic backbone that cross-cuts every industry from healthcare to manufacturing, enabling unprecedented efficiency, innovation, and the emergence of entirely new sectors.
+
+Moore’s law is still going strong, and the information age has plenty of road left.
+
+## Architectural Reimagining: Concurrent/Asynchronous Computing as Core
+
+To survive, computing now depends on two tiers of innovation:
+
+1. **Near-Term:** Optimize von Neumann architectures with concurrent/asynchronous programs. These reduce overhead and I/O latency, mitigating Amdahl’s Law and the von Neumann bottleneck.
+1. **Long-Term:** Native support for concurrent/asynchronous computing. These eliminate legacy bottlenecks by designing parallelism into the hardware itself.
+
+## Conclusion
+Scaling Crossroads demands prioritizing concurrent and asynchronous distributed computing—no longer as add-ons, but as the foundation of scalability. As hardware limits take hold, this shift will define how computing sustains growth in an era of exponential decline in traditional scaling models.
