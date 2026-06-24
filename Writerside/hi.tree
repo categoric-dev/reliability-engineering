@@ -25,7 +25,10 @@
     <toc-element topic="scaling-stalemate.md"/>
     <toc-element topic="chronology.md"/>
     <toc-element topic="Software-Design.md"/>
-    <toc-element topic="Consensus-and-Coherence.md"/>
+    <toc-element topic="Consensus-and-Coherence.md">
+        <toc-element topic="Risk-Analysis-Methodology.md"/>
+        <toc-element topic="System-Topology-Matrix.md"/>
+    </toc-element>
     <toc-element topic="OKR.md"/>
     <toc-element topic="AWS.md"/>
 </instance-profile>
