@@ -1,0 +1,61 @@
+/* Writerside custom layout overrides */
+
+/* Layout expansion to utilize maximum screen area */
+.layout.layout--rows.layout--scroll-container.layout--grow {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+:root {
+    --wh-max-width: 100% !important;
+    --wh-max-width-content: 100% !important;
+    --wh-max-width-article: 100% !important;
+}
+
+/* Sidebar alignment and positioning */
+.layout--columns {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.layout--columns > .layout:not(aside) {
+    max-width: none !important;
+}
+
+.layout--columns > aside.layout {
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+}
+
+/* Article and container constraints removal */
+.layout--container,
+.layout--container-content,
+.article,
+.article__content {
+    max-width: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Dynamic adjustment for all article element types */
+.article table,
+.article .code-block,
+.article blockquote,
+.article ul,
+.article ol,
+.article p,
+.article img,
+.article figure,
+.article .tabs,
+.article .definition-list,
+.article .media-grid,
+.article .note,
+.article .warning,
+.article .tip,
+.article .important,
+.article .card {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+}

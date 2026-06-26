@@ -2,6 +2,21 @@
 
 This framework proposes a structured hierarchical descent—the "Strategic Cascade"—designed to eliminate the disconnect between fundamental belief systems and operational output. While traditional management models focus primarily on the translation of goals into tasks, this model posits that sustainable achievement requires an epistemological foundation. By anchoring execution in first principles and logical rationales, the framework ensures that tactical actions are not merely productive, but are philosophically aligned with a core identity.
 
+## The Comprehensive Cascade
+
+| Level | Term       | Scope & Duration         | Nature         | Primary Focus    | Philosophical Context     |
+|:------|:-----------|:-------------------------|:---------------|:-----------------|:--------------------------|
+| 1     | Principles | Eternal / Constant       | Axiomatic      | Truth & Ethics   | First Principles          |
+| 2     | Rationale  | Static / Fundamental     | Logical        | Justification    | Epistemic Justification   |
+| 3     | Vision     | Generational / Long-term | Idealistic     | Inspiration      | Teleology (The End)       |
+| 4     | Mission    | Permanent / Ongoing      | Functional     | Identity/Purpose | Praxis                    |
+| 5     | Goal       | Multi-year / Long-term   | Qualitative    | Destination      | Strategic Intent          |
+| 6     | Strategy   | Medium to Long-term      | Methodological | Approach         | Heuristics / Game Theory  |
+| 7     | Objective  | Short to Medium-term     | Quantitative   | Precision        | SMART Criteria            |
+| 8     | KPI        | Continuous / Real-time   | Metric         | Evidence         | Empiricism (Verification) |
+| 9     | Milestone  | Fixed Point / Event      | Event-based    | Progression      | Phase Completion          | 
+| 10    | Task       | Daily / Immediate        | Binary         | Execution        | Tactical Implementation   |
+
 ## The Hierarchy of Intentionality
 
 ### I. The Axiomatic Foundation: Principles and Rationale
@@ -29,22 +44,6 @@ The final layer is the realm of **Empiricism** and execution. This is the most v
 *   **Key Performance Indicators (KPIs):** KPIs are continuous metrics used to verify progress in real-time. They provide the empirical evidence required to determine if the current strategy is yielding the desired results.
 *   **Milestones:** Milestones are discrete, event-based markers. Unlike KPIs, which are fluid measurements, milestones are fixed points of achievement that signify the completion of a major phase.
 *   **Tasks:** The atomic unit of the hierarchy. Tasks are binary action items—they are either executed or they are not. They represent the final manifestation of the entire cascade: a single daily action that is logically linked back through objectives, strategies, and rationales to a fundamental first principle.
-
-## The Comprehensive Cascade
-
-| Level | Term       | Scope & Duration         | Nature         | Primary Focus    | Philosophical Context     |
-|:------|:-----------|:-------------------------|:---------------|:-----------------|:--------------------------|
-| 1     | Principles | Eternal / Constant       | Axiomatic      | Truth & Ethics   | First Principles          |
-| 2     | Rationale  | Static / Fundamental     | Logical        | Justification    | Epistemic Justification   |
-| 3     | Vision     | Generational / Long-term | Idealistic     | Inspiration      | Teleology (The End)       |
-| 4     | Mission    | Permanent / Ongoing      | Functional     | Identity/Purpose | Praxis                    |
-| 5     | Goal       | Multi-year / Long-term   | Qualitative    | Destination      | Strategic Intent          |
-| 6     | Strategy   | Medium to Long-term      | Methodological | Approach         | Heuristics / Game Theory  |
-| 7     | Objective  | Short to Medium-term     | Quantitative   | Precision        | SMART Criteria            |
-| 8     | KPI        | Continuous / Real-time   | Metric         | Evidence         | Empiricism (Verification) |
-| 9     | Milestone  | Fixed Point / Event      | Event-based    | Progression      | Phase Completion          | 
-| 10    | Task       | Daily / Immediate        | Binary         | Execution        | Tactical Implementation   |
-
 
 ## Conclusion: Synthesis of Alignment
 The integrity of this framework relies on **Vertical Alignment**. When a failure occurs at the task level, the actor can ascend the hierarchy to determine if the failure is tactical (Task/Objective), strategic (Strategy/Goal), or foundational (Rationale/Principle). By maintaining this rigorous philosophical chain, the actor ensures that every unit of effort expended is an expression of their core axiomatic truths.

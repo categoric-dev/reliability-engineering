@@ -5,6 +5,7 @@
 
     <variables>
         <ignore-problems>MRK002</ignore-problems>
+        <custom-css>custom.css</custom-css>
     </variables>
 
 </buildprofiles>
