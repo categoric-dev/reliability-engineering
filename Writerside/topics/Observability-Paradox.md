@@ -1,3 +1,0 @@
-# Observability Paradox
-
-Start typing here...

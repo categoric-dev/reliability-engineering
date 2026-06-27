@@ -6,8 +6,4 @@
         <accepts>page.html</accepts>
     </rule>
     -->
-    <rule id="12c6c0a7">
-        <description><![CDATA[Created after removal of "<FT-md.md>" from Reliability Engineering]]></description>
-        <accepts>FT-md.html</accepts>
-    </rule>
 </rules>
