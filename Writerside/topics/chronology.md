@@ -1,4 +1,4 @@
-# Chronology
+# Compute Chronology
 
 ## Compute Categories
 ```mermaid
@@ -47,9 +47,9 @@ section Hardware
   IBM Mainframe: 1952
 section Language
   Fortran: 1955 - Standard
-         : 1977 - Structured Programming Fortran 77
-         : 1991 - Generic, Array, Modular programming Fortran 90
-         : 1997 - Parallel programming Fortran 95
+         : 1977 - Structured Programming `Fortran 77`
+         : 1991 - Generic, Array, Modular programming `Fortran 90`
+         : 1997 - Parallel programming `Fortran 95`
   Cobol: 1968 - Standard
        : 1985 - Structured Programming Cobol 85
 ```
@@ -57,12 +57,11 @@ section Language
 ```mermaid
 timeline
     title Von Neumann Architecture
-        section OS
+        section Rack Server
+          1980: Early 1980s recession
           1982: SunOS
           1984: HP-UX
           1986: AIX
-        section Rack Server
-          1980: Early 1980s recession
           1987: Black Monday
           1989: Friday the 13th mini-crash
           1990: Early 1990s recession
@@ -73,8 +72,8 @@ timeline
 title Von Neumann Architecture
 section Blade Server
   2000: dotcom bubble
-  2002: Object Oriented Cobol 2002
-  2004: Object Oriented Programming Fortran 2003
+  2002: Object Oriented `Cobol 2002`
+  2004: Object Oriented Programming `Fortran 2003`
 ```
 
 ```mermaid
@@ -82,7 +81,7 @@ timeline
 title Von Neumann Architecture
 section Cloud
   2007: United States bear market of 2007–2009
+  2010: Concurrent Programming `Fortran 2008`
   2011: August 2011 stock markets fall
-  2010: Concurrent Programming Fortran 2008
   2023: Async messaging
 ```

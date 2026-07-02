@@ -7,5 +7,7 @@
         <ignore-problems>MRK002</ignore-problems>
         <custom-css>custom.css</custom-css>
     </variables>
-
+    <footer>
+        <copyright>MIT License 2025-present categoric-dev</copyright>
+    </footer>
 </buildprofiles>
